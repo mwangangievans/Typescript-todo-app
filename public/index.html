@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript TodoApp</title>
+    <link rel="stylesheet" href="./todo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Todo App In TypeScript</h1>
+
+      <!-- output list -->
+      <ul class="item-list"></ul>
+    </div>
+
+    <footer>
+      <form class="new-item-form">
+        <div class="field">
+          <label>Title:</label>
+          <input type="text" id="title" />
+        </div>
+        <div class="field">
+          <label>Description:</label>
+          <input type="text" id="Description" />
+        </div>
+        <div class="field">
+          <label>completion Date:</label>
+          <input type="date" id="completion_date" />
+        </div>
+        <button id="addbit">Add</button>
+      </form>
+    </footer>
+
+    <footer>
+      <form class="tasks">
+
+         <div class="uncompleted">
+        <h3>UnCompleted Tasks</h3>
+        <ul>
+        <li>task one..... </li>
+        <li>Task Two....</li>
+        <li>Task Three.....</li></ul>
+
+      </div>
+      <div class="completed">
+        <h3>Completed Tasks</h3>
+        <ul>
+        <li>task one.... </li>
+        <li>Task Two.....</li>
+        <li>Task Three....</li></ul>
+
+      </div>
+     
+     
+    </footer>
+
+    <script  type="module" src="./todo.js"></script>
+  </body>
+</html>
