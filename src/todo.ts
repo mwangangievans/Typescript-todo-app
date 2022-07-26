@@ -24,8 +24,15 @@ form.addEventListener('submit',(e:Event) =>
     IsCompleted : false
     }
     validationMethod(formVAlues);
-    const formData = new UnCompletedTasks(formVAlues.id,formVAlues.title,formVAlues.description,formVAlues.completionDate,formVAlues.IsCompleted);
-    formData.storedDataToLocalStorage(formVAlues);
+    task.push(formVAlues)
+    const formData = new UnCompletedTasks(formVAlues);
+    // clearInputField(formVAlues);
+    console.log(task)
+    localStorage.setItem("tasks" ,JSON.stringify(task));
+    const items = window.localStorage.getItem('tasks');
+
+    console.log(items);
+
     
 })
 

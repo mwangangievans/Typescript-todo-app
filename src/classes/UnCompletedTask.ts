@@ -2,27 +2,18 @@ import { Task } from '../interface/taskInterface';
 
 
 export class UnCompletedTasks{
-        id:number;
-        title:string;
-        description:string;
-        completionDate:string;
-        IsCompleted:boolean
+         todo:Task[] = []
+       
     
-        constructor(id:number ,title:string,description:string,completionTime:string,IsCompleted:boolean)
+        constructor(task :Task)
         {
-            this.id = id;
-            this.title = title;
-            this.description = description;
-            this.completionDate = completionTime;
-            this.IsCompleted = IsCompleted;
+            this.todo.push(task)
+            this.todo=[...this.todo, task]
+
+            console.log();
+            
+            
         }
 
-        storedDataToLocalStorage = (taskdata:Task) =>{
-
-            console.log(taskdata)
-
-            localStorage.setItem("tasks" ,JSON.stringify(taskdata));
-           
-        }
 
 }
