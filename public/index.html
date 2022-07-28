@@ -16,6 +16,8 @@
     <footer>
       <form class="new-item-form">
         <div class="field">
+        <input type="text" id="id_input" style="display: none" />
+
           <label>Title:</label>
           <input type="text" id="title" />
         </div>
@@ -27,7 +29,12 @@
           <label>completion Date:</label>
           <input type="date" id="completion_date" />
         </div>
+        <div class="editbtns">
+        <button type="button" id="editbit">Edit</button>
         <button id="addbit">Add</button>
+        </div>
+        
+
       </form>
     </footer>
 
@@ -36,24 +43,19 @@
 
          <div class="uncompleted">
         <h3>UnCompleted Tasks</h3>
-        <ul>
-        <li>task one..... </li>
-        <li>Task Two....</li>
-        <li>Task Three.....</li></ul>
+       <ul id="uncomplete"></ul>
 
       </div>
       <div class="completed">
         <h3>Completed Tasks</h3>
         <ul>
-        <li>task one.... </li>
-        <li>Task Two.....</li>
-        <li>Task Three....</li></ul>
+       </ul>
 
       </div>
      
      
     </footer>
 
-    <script  type="module" src="./todo.js"></script>
+    <script  type="module" src="./app.js"></script>
   </body>
 </html>
