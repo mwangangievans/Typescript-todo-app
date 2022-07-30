@@ -1,8 +1,11 @@
 import { Task, valueObject } from "./interface/taskInterface.js";
 import { UnCompletedTasks } from "./classes/UnCompletedTask.js";
+import { CompletedTasks } from "./classes/Completed.js";
+
 import { validationMethod, clearInputField } from "./Helpers/validation.js";
 
 valueObject.form.addEventListener("submit", (e: Event) => {
+  e.preventDefault();
   if (
     valueObject.Title.value == "" ||
     valueObject.Description.value == "" ||
@@ -24,11 +27,14 @@ valueObject.form.addEventListener("submit", (e: Event) => {
     const todosData = new UnCompletedTasks();
     todosData.addTodo(formVAlues);
     window.location.reload();
+    clearInputField(formVAlues);
   }
 });
 
 window.onload = () => {
   const todosData = new UnCompletedTasks();
+  const completed = new CompletedTasks();
+  completed.rederCompledTodos();
   todosData.rederTodos();
 
   const editBtns = document.getElementsByClassName("edit");
@@ -62,15 +68,12 @@ window.onload = () => {
 
 valueObject.editBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  // updateTask()
   const newData: any | string = {
-    id: valueObject.editId.value,
+    id: parseInt(valueObject.editId.value),
     title: valueObject.Title.value,
     description: valueObject.Description.value,
     completionDate: valueObject.CompletionDate.value,
   };
-
-  // console.log(valueObject.editId.value, newData);
 
   const todosData = new UnCompletedTasks();
   todosData.updateTask(parseInt(valueObject.editId.value), newData);

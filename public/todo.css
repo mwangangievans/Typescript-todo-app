@@ -4,6 +4,8 @@ body {
 }
 .wrapper {
   max-width: 960px;
+  max-height: 5px;
+
   margin: 0 auto;
 }
 h1 {
@@ -103,7 +105,7 @@ select {
 #addbit {
   color: white;
   border: 0;
-  background: blue !important;
+  background: green !important;
   padding: 6px;
   min-width: 80px;
   border-radius: 4px;
